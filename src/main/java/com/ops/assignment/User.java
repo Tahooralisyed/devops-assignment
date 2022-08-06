@@ -10,12 +10,11 @@ public class User {
     private long id;
 
     //@NotNull
-    private String email;
+    private String lastName;
 
     //@NotNull
-    private String name;
+    private String firstName;
 
-    /** Ctor. */
     public User() {
         // nop
     }
@@ -24,9 +23,9 @@ public class User {
         this.id = id;
     }
 
-    public User(String email, String name) {
-        this.email = email;
-        this.name = name;
+    public User(String lastName, String firstName) {
+        this.lastName = lastName;
+        this.firstName = firstName;
     }
 
     public long getId() {
@@ -37,19 +36,19 @@ public class User {
         this.id = value;
     }
 
-    public String getEmail() {
-        return email;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setEmail(String value) {
-        this.email = value;
+    public void setLastName(String value) {
+        this.lastName = value;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String value) {
-        this.name = value;
+    public void setFirstName(String value) {
+        this.firstName = value;
     }
 }

@@ -17,19 +17,19 @@ public class UserController {
     /**
      * /create --> Create a new user and save it in the database.
      *
-     * @param email
+     * @param lastName
      *            User's email
-     * @param name
+     * @param firstName
      *            User's name
      * @return A string describing if the user is succesfully created or not.
      */
     @RequestMapping("/create")
     @ResponseBody
-    public String create(String email, String name) {
-        logger.info("received create-request with email " + email + " and name " + name);
+    public String create(String lastName, String firstName) {
+        logger.info("received create-request with lastName " + lastName + " and first name " + firstName);
         User user = null;
         try {
-            user = new User(email, name);
+            user = new User(lastName, firstName);
             userRepository.save(user);
         } catch (Exception ex) {
             return "Error creating the user: " + ex.toString();
@@ -74,9 +74,9 @@ public class UserController {
             return "Error deleting the user:" + ex.toString();
         }
 
-        String usersStringified = "<table border='1'><tr><td>id</td><td>name</td><td>email</td></tr>";
+        String usersStringified = "<table border='1'><tr><td>id</td><td>First name</td><td>Last Name</td></tr>";
         for (User user : users) {
-            usersStringified += "<tr><td>" + user.getId() + "</td><td>" + user.getName() + "</td><td>" + user.getEmail()
+            usersStringified += "<tr><td>" + user.getId() + "</td><td>" + user.getFirstName() + "</td><td>" + user.getLastName()
                     + "</td></tr>";
         }
         usersStringified += "</table>";
