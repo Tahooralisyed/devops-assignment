@@ -1,0 +1,4 @@
+deployment:
+   image: "devops-assignment"
+   tag: "latest"
+name: devops-assignment
